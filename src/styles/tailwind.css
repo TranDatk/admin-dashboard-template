@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply text-[13px] font-sans;
+    }
+
+    svg {
+        @apply align-top;
+    }
+}
+
+@layer components {
+    .btn-success {
+        @apply bg-[#00b894] opacity-70 rounded-sm;
+    }
+
+    .btn-success:hover {
+        @apply opacity-100 transition ease-in-out duration-500;
+    }
+
+    .btn-primary {
+        @apply bg-[#0984e3] opacity-70 rounded-sm;
+    }
+
+    .btn-primary:hover {
+        @apply opacity-100 transition ease-in-out duration-500;
+    }
+
+    .btn-secondary {
+        @apply bg-[#2d3436] opacity-70 rounded-sm;
+    }
+
+    .btn-secondary:hover {
+        @apply opacity-100 transition ease-in-out duration-500;
+    }
+
+    .btn-danger {
+        @apply bg-[#d63031] opacity-70 rounded-sm;
+    }
+
+    .btn-danger:hover {
+        @apply opacity-100 transition ease-in-out duration-500;
+    }
+}
+
+@layer utilities {
+    .card-body {
+        @apply text-[13px];
+    }
+}
