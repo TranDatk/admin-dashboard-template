@@ -10,11 +10,7 @@ const LayoutDashboard: React.FC = () => {
 
     const breadcrumbItems = pathSnippets.map((_, index) => {
         const url = `/${pathSnippets.slice(0, index + 1).join('/')}`;
-        return (
-            <Breadcrumb.Item key={url}>
-                {url}
-            </Breadcrumb.Item>
-        );
+        return { title: url, key: url };
     });
 
     const {
@@ -23,24 +19,10 @@ const LayoutDashboard: React.FC = () => {
 
     return (
         <Layout>
-            <Header style={{ padding: 0, background: colorBgContainer }} />
-            <Content style={{ margin: '0 16px' }}>
-                {
-                    breadcrumbItems.length > 0 ? (
-                        <Breadcrumb style={{ margin: '16px 0' }}>
-                            {breadcrumbItems}
-                        </Breadcrumb>
-                    )
-                        :
-                        (
-                            <Breadcrumb style={{ margin: '16px 0' }}>
-                                <Breadcrumb.Item>
-                                    /
-                                </Breadcrumb.Item>
-                            </Breadcrumb>
-                        )
-                }
-
+          <Header style={{ padding: 0, background: colorBgContainer }} />
+          <Content style={{ margin: '0 16px' }}>
+                <Breadcrumb style={{ margin: '16px 0' }}
+                    items={breadcrumbItems.length > 0 ? breadcrumbItems : [{ title: '/' }]} />
                 <div
                     style={{
                         padding: 24,
